@@ -30,9 +30,13 @@ h4{
 
 .nav{
     position: sticky;
-    display: flex;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 11% 11% 11%;
+    grid-template-areas: "logo work about";
     flex-direction: row;
     align-items: flex-start;
+   
     height: 100px;
     top: 0px;
     padding-top: 20px;
@@ -41,9 +45,9 @@ h4{
 }
 
 .nav img{
-    display: inline-flex;
+    display: flex;
     position: relative;
-    align-content: center;
+    align-content: flex-start;
     width: 46px;
     height: 90px;
     left: 101px;
@@ -54,9 +58,7 @@ h4{
 display: flex;
 position: relative;
 height: 72px;
-left: 182px;
 top: 33px;
-justify-content: space-between;
 align-items: center;
 text-decoration: none;
 margin-left: 16px;
@@ -67,9 +69,20 @@ font-weight: 700;
 color: black;
 }
 
+.nav .work{
+    grid-area: work;
+}
+.nav .about{
+    grid-area: about;
+}
+.nav img{
+    grid-area: logo;
+}
 
 
 .header{
+position: relative;
+top: 30px;
 display: grid;
 height: 143px;
 align-items: center;
@@ -101,15 +114,27 @@ grid-template-areas: "h1 p";
 
 
 .work{
-    display: flex;
+    position: relative;
+    top: 28px;
+    display: grid;
     justify-content: center;
     margin-left: 70px;
     margin-right: 70px; 
-    
+    grid-template-rows: 100%;
+grid-template-columns: 33% 33% 33%;
+grid-template-areas: "box1 box2 box3";
 }
+.box1{ 
+grid-area: box1;
+}
+.box2{ 
+    grid-area: box2;
+    }
+.box3{ 
+    grid-area: box3;
+        }
 .box1, .box2, .box3 {
     position: relative;
-    width: 33%;
     height: 389px;
     top: 28px;
     margin: 10px;
@@ -125,6 +150,7 @@ grid-template-areas: "h1 p";
     top: -105px;
 text-align: center;
 height: 80px;
+color: black;
 }
 
 .box1 h3, .box2 h3, .box3 h3{
@@ -159,7 +185,7 @@ top: 200px;
     
 }
 
-.skills h4{
+.skills h2{
     grid-area: h4;
     align-items: center;
 }
@@ -237,5 +263,115 @@ font-family:'Open Sans', sans-serif;
     display: flex;
     position: relative;
     left: 1500px;
-    top: -34.38px;
+    top: -36px;
+}
+
+@media only screen and (max-width: 600px) {
+    .work{ position: relative;
+        top: 80px;
+        display: grid;
+        justify-content: center;
+        margin-left: 20px;
+        margin-right: 20px; 
+        grid-template-columns: 100%;
+        grid-template-rows: 33% 33% 33%;
+    grid-template-areas: "box1" 
+    "box2" 
+    "box3";}
+    .header{
+        position: relative;
+        top: 50px;
+        display: grid;
+        height: 143px;
+        align-items: center;
+        margin-right: 20px;
+        margin-left: 20px;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "h1"
+        "p";
+        }
+        .header h1{
+            margin-right: 20px;
+            margin-left: 16px;
+            font-size: 40px;}
+        .header p{
+            top: 60px;
+        
+        }
+        .skills{
+            position: relative;
+        top: 150px;
+            display: grid;
+            text-align: center;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 3fr;
+            margin-right: 20px ;
+            margin-left: 20px;
+            grid-template-areas: 
+            "h4 block1"
+            "h4 block2" 
+            "h4 block3" 
+            "h4 block4"
+            "h4 block5"
+            "h4 block6"
+            "h4 block7" 
+            "h4 block8";
+          
+            
+        }
+        .skills h2{ font-size: 25px;}
+        
+
+        .footer{
+            position: relative;
+            left: -20px;
+            background-color: #616161;
+            width: 900vmin;
+            color: white;
+        height: 140px;
+        top: 1000px;
+        }
+        
+        .footer img{
+            position: relative;
+            height: 34.38px;
+            width: 34.38px;              
+            left: 40px;
+            top: 37px;
+            }              
+        
+        .footer a{
+            display: flex;
+         position: relative;
+         left: 100px;
+         top: 3px;
+        text-decoration: none;
+        color: white;
+        font-family:'Open Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 300;
+        }
+        
+        .footer p{
+            display: flex;
+            position: relative;
+            left: 40px;
+            top: -6px;
+        }    
+.nav{
+    position: sticky;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas: "logo work about";
+    flex-direction: row;
+    align-items: flex-start;
+}
+.nav img{
+position: relative;
+left: 30px;
+
+}
+        
 }

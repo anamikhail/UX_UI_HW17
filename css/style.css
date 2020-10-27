@@ -126,6 +126,7 @@ grid-template-areas: "box1 box2 box3";
 }
 .box1{ 
 grid-area: box1;
+
 }
 .box2{ 
     grid-area: box2;
@@ -159,8 +160,10 @@ color: black;
 }
 .box1 .text{
     background-color:rgb(157,127,168,0.3);
-
 }
+
+
+
 .box2 .text{
     background-color:rgb(152,183,113,0.3);
 }
@@ -266,6 +269,14 @@ font-family:'Open Sans', sans-serif;
     top: -36px;
 }
 
+.animate1{
+    animation: workup1;
+}
+@keyframes workup1 {
+    0%   {background-color:rgb(143,115,153,1); color:white;}
+    50%  {background-color:rgb(157,127,168,0.66);}
+    100% {background-color:rgb(143,115,153,1); color:white;}
+}
 @media only screen and (max-width: 600px) {
     .work{ position: relative;
         top: 80px;
